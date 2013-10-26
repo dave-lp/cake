@@ -1,3 +1,4 @@
+app/tmp/cache/persistent/
 #################
 ## Eclipse
 #################
@@ -7,7 +8,6 @@
 .metadata
 bin/
 tmp/
-app/tmp/
 *.tmp
 *.bak
 *.swp
