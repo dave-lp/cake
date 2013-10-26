@@ -1,4 +1,7 @@
 app/tmp/cache/persistent/
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_en-us
+app/tmp/cache/persistent/myapp_cake_core_file_map
+
 #################
 ## Eclipse
 #################
