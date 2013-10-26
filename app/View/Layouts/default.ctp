@@ -17,7 +17,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: this ain\'t your mom\'s cake!');
+$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,6 +57,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: this ain\'t your mom\'s cake!');
 			?>
 		</div>
 	</div>
-	<?php echo "layouts/default.ctp is this (shell of a) file with header footer and content divs"; //$this->element('sql_dump'); ?>
+	<?php echo "hi"; //$this->element('sql_dump'); ?>
 </body>
 </html>
