@@ -2,14 +2,15 @@
 
 <h1>Blog posts</h1>
 <br><p><?php echo $this->Html->link('Add Post', array('controller' => 'posts', 'action' => 'add')); ?></p>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-		<th>Action</th>
-        <th>Created</th>
-    </tr>
-
+<table class="rowflash">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Action</th>
+			<th>Created</th>
+		</tr>
+	</thead>
     <!-- Here is where we loop through our $posts array, printing out post info -->
 
     <?php foreach ($posts as $post): ?>

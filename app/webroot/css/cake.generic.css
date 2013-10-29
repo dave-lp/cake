@@ -23,7 +23,7 @@
 
 /** General Style Info **/
 body {
-	background: #003d4c;
+	background: #000000; /*#003d4c;*/
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
@@ -35,7 +35,7 @@ a {
 	font-weight: bold;
 }
 a:hover {
-	color: #367889;
+	color: #ffffff;
 	text-decoration:none;
 }
 a img {
@@ -82,19 +82,19 @@ p {
 }
 #header h1 {
 	line-height:20px;
-	background: #003d4c url('../img/cake.icon.png') no-repeat left;
+	background: #000000 url('../img/cake.icon.png') no-repeat left;
 	color: #fff;
 	padding: 0px 30px;
 }
 #header h1 a {
 	color: #fff;
-	background: #003d4c;
+	background: #000000;
 	font-weight: normal;
 	text-decoration: none;
 }
 #header h1 a:hover {
 	color: #fff;
-	background: #003d4c;
+	background: #ff0000;
 	text-decoration: underline;
 }
 #content{
@@ -103,7 +103,7 @@ p {
 	color: #333;
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
-	height:600px;
+	height:400px;
 }
 #footer {
 	clear: both;
@@ -740,4 +740,21 @@ pre {
 /** Elements **/
 #url-rewriting-warning {
 	display:none;
+}
+#logoLeft {
+	position: relative;
+	float:left;
+	height: 100px;
+	width: 400px;
+}
+#logoRight {
+	position: relative;
+	float:right;
+	height: 100px;
+	width: 340px;
+	margin-right: -20px;
+}
+.rowflash tbody tr:hover {
+	background: #ff0000;
+	color: #fff;	
 }
