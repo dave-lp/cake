@@ -35,7 +35,7 @@ a {
 	font-weight: bold;
 }
 a:hover {
-	color: #ffffff;
+	color: #ff0000;
 	text-decoration:none;
 }
 a img {
@@ -755,6 +755,5 @@ pre {
 	margin-right: -20px;
 }
 .rowflash tbody tr:hover {
-	background: #ff0000;
-	color: #fff;	
+	background: #ffff00;
 }
