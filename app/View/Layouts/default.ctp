@@ -30,33 +30,50 @@ $cakeDescription = __d('cake_dev', 'CakePHP: this ain\'t your mom\'s cake!');
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css(
+            array(
+                'prettify/prettify',
+                'bootstrap-timepicker.min',
+                'bootstrap-timepicker.min',
+                'feedbackBadge',
+                'custom',
+                'style.default',
+                'jquery.ui'
+            )
+        );
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		echo $this->Html->script(
+            array(
+                'prettify/prettify',
+                'jquery-1.9.1.min',
+                'jquery-ui-1.9.2.min',
+                'jquery-migrate-1.1.1.min',
+                'jquery.alerts',
+                'jquery.uniform.min',
+                'jquery.validate.min',
+                'jquery.cookie',
+                'jquery.feedbackBadge.min',
+                'jquery.form.min',
+                'chosen.jquery.min',
+                'bootstrap.min',
+                'bootstrap-timepicker.min',
+                'custom',
+                'global'
+            )
+        );
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<div id="logoLeft">gghgf</div><div id="logoRight"><h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1></div>
-		</div>
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
-	<?php echo "layouts/default.ctp is this (shell of a) file with header footer and content divs"; //$this->element('sql_dump'); ?>
+    <div class="mainwrapper">
+        <?php echo $this->element('leftpanel'); ?>
+        <?php echo $this->element('rightpanel'); ?>
+        <div class="clearfix"></div>
+        <?php echo $this->element('footer'); ?>
+    </div>
+    <a href="/controls/feedback" title="Give us feedback" id="feedback-badge-right"><span>Feedback</span></a>
+    <?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
