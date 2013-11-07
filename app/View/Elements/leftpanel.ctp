@@ -14,7 +14,7 @@
         <ul class="nav nav-tabs nav-stacked">
             <li class="nav-header"> Navigation</li>
             <li><a href="/"><span class="iconsweets-home"></span> Home</a></li>
-            <li><a href="/posts/add"><span class="iconsweets-user"></span>New Post</a></li>
+            <li><a href="/posts/add"><span class="iconsweets-user"></span>Add Post</a></li>
             <li><a href="/posts/index"><span class="iconsweets-users"></span> All Posts</a></li>
            <!-- <li><a href="/patients/follow_ups"><span class="iconsweets-day"></span>Follow ups</a></li>-->
             <li class="dropdown"><a href="#"><span class="icon-signal"></span> Example Dropdown</a>
