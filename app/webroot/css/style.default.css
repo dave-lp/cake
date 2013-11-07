@@ -156,12 +156,14 @@ h4 { font-size: 16px; line-height: 26px; }
 .breadcrumbwidget .breadcrumb .divider { color: #666; }
 
 .showmenu { 
-	display: inline-block; height: 35px; width: 40px; background: #0b4073 url("/img/menu.png") no-repeat center center; 
+/*	display: inline-block; height: 35px; width: 40px; background: #ff0 url("/img/menu.png") no-repeat center center;*/ 
+display: inline-block; height: 35px; width: 40px; background: #ff0 url("/img/menufire.gif") no-repeat center center;
 	margin: 7px 0 0 8px; -moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2), 1px 1px 0 rgba(255,255,255,0.2);
 	-webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2), 1px 1px 0 rgba(255,255,255,0.2);
 	box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2), 1px 1px 0 rgba(255,255,255,0.2); 
 }
-.showmenu:hover, .showmenu:active { background-color: #083865; }
+/*.showmenu:hover, .showmenu:active { background-color: #083865; }*/
+.showmenu:hover, .showmenu:active { background-color: #083865; background: #ff0 url("/img/menufire.gif") no-repeat center center; }
 
 /* Page Title */
 .pagetitle { padding: 9px 12px; border-bottom: 1px solid #bbb; }
@@ -1610,10 +1612,5 @@ body.loginbody { background: #f7f7f7 url("/img/gray_jean.png"); }
 	.wizard .tabbedmenu li a span.label { display: none; }
 	.verwizard .verticalmenu { float: none; width: auto; margin-bottom: 20px; }
 	.verwizard .stepContainer, .verwizard .actionBar { margin-left: 0; }
-
-.rowflash tbody tr:hover {
-color:#ffffff;
-}
-
 
 }
