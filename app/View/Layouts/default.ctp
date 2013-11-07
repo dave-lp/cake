@@ -35,7 +35,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: this ain\'t your mom\'s cake!');
                 'prettify/prettify',
                 'bootstrap-timepicker.min',
                 'bootstrap-timepicker.min',
-                'feedbackBadge',
+               /* 'feedbackBadge', */
                 'custom',
                 'style.default',
                 'jquery.ui'

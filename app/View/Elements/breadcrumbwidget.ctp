@@ -6,9 +6,8 @@
                 array(
                     'text' => 'Home',
                     'url' => array(
-                        'controller' => 'pages',
-                        'action' => 'display',
-                        'home'
+                        'controller' => 'posts',
+                        'action' => 'index',
                     ),
                     'escape' => false
                 )
