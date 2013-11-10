@@ -42,7 +42,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
-
 /***** MAIN WRAPPER *****/
 /************************/
 
@@ -115,7 +114,9 @@ h4 { font-size: 16px; line-height: 26px; }
 
 /***** RIGHT PANEL *****/
 /***********************/
-
+.rowflash th, td { border: 1px solid #333333; }
+.rowflash th { background-color:#333333; color:#fff; }
+.rowflash tbody tr:hover{ background: #ff0; }
 .rightpanel { margin-left: 260px; position: relative; background: url("/img/gray_jean.png"); }
 .rightpanel:after { display: block; clear: both; content: ''; }
 
@@ -1612,5 +1613,6 @@ body.loginbody { background: #f7f7f7 url("/img/gray_jean.png"); }
 	.wizard .tabbedmenu li a span.label { display: none; }
 	.verwizard .verticalmenu { float: none; width: auto; margin-bottom: 20px; }
 	.verwizard .stepContainer, .verwizard .actionBar { margin-left: 0; }
+
 
 }
