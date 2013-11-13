@@ -1,19 +1,5 @@
-<!-- File: /app/View/Addresses/view.ctp -->
+<?php echo $this->Html->addCrumb('All Addresses', '/addresses/index'); ?><?php echo $this->Html->addCrumb('Address for '.$address['Address']['first_name']." ".$address['Address']['last_name'], '/addresses/view/'.$address['Address']['id']); ?>
 
-<!-- <h1>
-	<?php echo ($post['Post']['title']); ?>&nbsp;&nbsp;&nbsp;
-	<?php echo $this->Html->link(
-		'Back',
-		array('controller' => 'posts', 'action' => 'index')
-	); ?> | 
-	<?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Post']['id'])); ?>
-</h1> 
-
-
-<p><small>Created: <?php echo $post['Post']['created']; ?></small></p>
-
-<p><?php echo h($post['Post']['body']); ?></p> -->
-<?php echo $this->Html->addCrumb('Address for '.$address['Address']['first_name']." ".$address['Address']['last_name'], '/addresses/view/'.$address['Address']['id']); ?>
 <table style="width:600px;" class="rowflash" border=1px>
 	<thead>
 		<tr>

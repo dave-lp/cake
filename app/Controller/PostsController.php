@@ -4,7 +4,8 @@
     public $components = array('Session');
 
 	public function index() {
-        $this->set('posts', $this->Post->find('all'));
+       // $this->set('posts', $this->Post->find('all'));
+	   $this->set('posts', $this->Post->find('all', array('order' => 'Post.created DESC')));
     }
 
     public function view($id = null) {

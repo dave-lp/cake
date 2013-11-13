@@ -5,11 +5,8 @@
 <?php echo $this->Html->script('jquery.mask.min', array('inline'=>true)); ?>
 <!--<h1>Blog posts</h1>
 <br><p>-->
-<?php echo $this->Html->link('Add New Contact', array('controller' => 'addresses', 'action' => 'add')); ?>
+<?php // echo $this->Html->link('Add New Contact', array('controller' => 'addresses', 'action' => 'add')); ?>
 <!--</p>-->
-<br><Br>
-
-
 <table style="width:600px;" class="rowflash" border=1px>
 	<thead>
 		<tr>

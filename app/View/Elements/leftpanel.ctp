@@ -13,20 +13,22 @@
     <div class="leftmenu">
         <ul class="nav nav-tabs nav-stacked">
             <li class="nav-header"> Navigation</li>
-            <li><a href="/"><span class="iconsweets-home"></span> Home</a></li>
-            <li><a href="/posts/add"><span class="iconsweets-speech3"></span>Add Post</a></li>
-            <li><a href="/posts/index"><span class="iconsweets-speech4"></span>All Posts</a></li>
-			<li><a href="/addresses/index"><span class="iconsweets-users"></span>Address Book</a></li>
+            <li><a href="/"><span class="iconsweets-home"></span> Home<?php if ($title_for_layout == "Home") echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+			<li class="dropdown"><a href="#"><span class="iconsweets-speech4"></span>Posts</a>
+				<ul <?php if (strpos($this->here, 'posts')) echo 'style="display: block;"';?>>
+					<li ><a href="/posts/add"><span class="iconsweets-speech3"></span>Add Post<?php if (strpos($this->here, 'posts/add')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+					<li><a href="/posts/index"><span class="iconsweets-speech4"></span>All Posts<?php if (strpos($this->here, 'posts/index')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+				</ul>
            <!-- <li><a href="/patients/follow_ups"><span class="iconsweets-day"></span>Follow ups</a></li>-->
-            <li class="dropdown"><a href="#"><span class="icon-signal"></span> Example Dropdown</a>
-                <ul>
-                    <li><a href="/reports/weekly_referral"> example</a></li>
-                    <li><a href="/reports/weekly_referral"> example2</a></li>
-                    <li><a href="/reports/weekly_referral"> example3</a></li>
-                    <li><a href="/reports/weekly_referral"> example4</a></li>
-                </ul>
+            <li class="dropdown"><a href="#"><span class="iconsweets-users"></span>Address Book</a>
+                <ul <?php if (strpos($this->here, 'addresses')) echo 'style="display: block;"';?>>
+					<li><a href="/addresses/add"><span class="iconsweets-user"></span>Add Contact<?php if (strpos($this->here, 'addresses/add')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+					<li><a href="/addresses/index"><span class="iconsweets-users"></span>All Contacts<?php if (strpos($this->here, 'addresses/index')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+				</ul>
+
             </li>
         </ul>
     </div>
     <!--leftmenu-->
 </div>
+<?php // echo $title_for_layout; ?>

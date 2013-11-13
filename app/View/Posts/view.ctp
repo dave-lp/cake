@@ -1,4 +1,5 @@
 <!-- File: /app/View/Posts/view.ctp -->
+<?php echo $this->Html->addCrumb('All Posts', '/posts/index'); ?><?php echo $this->Html->addCrumb($post['Post']['title'], 'view/'.$post['Post']['id']); ?>
 
 <h1>
 	<?php echo ($post['Post']['title']); ?>&nbsp;&nbsp;&nbsp;

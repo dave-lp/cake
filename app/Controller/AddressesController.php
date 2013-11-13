@@ -4,7 +4,12 @@
     public $components = array('Session');
 
 	public function index() {
-        $this->set('addresses', $this->Address->find('all'));
+//        $this->set('addresses', $this->Address->find('all'));
+	$this->set('addresses', $this->Address->find('all', array('order' => 'Address.first_name ASC')));
+
+
+	//	print_r($this->Address->find('all'));
+	//	die();
     }
 
     public function view($id = null) {

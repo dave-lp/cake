@@ -5,11 +5,9 @@
 <?php echo $this->Html->script('jquery.mask.min', array('inline'=>true)); ?>
 <!--<h1>Blog posts</h1>
 <br><p>-->
-<?php echo $this->Html->link('Add Post', array('controller' => 'posts', 'action' => 'add')); ?>
+<?php // echo $this->Html->link('Add Post', array('controller' => 'posts', 'action' => 'add')); ?>
 <!--</p>-->
-<br><Br>
-
-
+newest first<br><br>
 <table style="width:600px;" class="rowflash" border=1px>
 	<thead>
 		<tr>
