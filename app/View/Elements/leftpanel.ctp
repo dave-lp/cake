@@ -27,8 +27,13 @@
 				</ul>
 
             </li>
-        </ul>
+			<li class="dropdown"><a href="#"><span class="iconsweets-users"></span>Users</a>
+                <ul <?php if (strpos($this->here, 'users')) echo 'style="display: block;"';?>>
+					<li><a href="/users/add"><span class="iconsweets-user"></span>Add User<?php if (strpos($this->here, 'users/add')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+					<li><a href="/users/index"><span class="iconsweets-users"></span>All Users<?php if (strpos($this->here, 'users/index')) echo '&nbsp;&nbsp;&nbsp;&nbsp;<span class="iconsweets-running">';?></a></li>
+				</ul>
+            </li>
+		</ul>
     </div>
     <!--leftmenu-->
 </div>
-<?php // echo $title_for_layout; ?>
