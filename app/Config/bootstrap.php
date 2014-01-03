@@ -8,8 +8,6 @@
  * You should also use this file to include any files that provide global functions/constants
  * that your application uses.
  *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -107,4 +105,3 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
-CakePlugin::load('DebugKit');

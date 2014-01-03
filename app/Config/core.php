@@ -4,8 +4,6 @@
  *
  * Use it to configure core behavior of Cake.
  *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -55,7 +53,7 @@
 		'level' => E_ALL & ~E_DEPRECATED,
 		'trace' => true
 	));
-Configure::write('debug', 1);
+
 /**
  * Configure the Exception handler used for uncaught exceptions. By default,
  * ErrorHandler::handleException() is used. It will display a HTML page for the exception, and
@@ -224,12 +222,12 @@ Configure::write('debug', 1);
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYrttdg3456tdfgg5gwtg54waC9mi');
+	Configure::write('Security.salt', 'vO))QOg*u2A2xPMOMU%c9GfHp*EBr)y$)SsP2$Pt');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '67345635673546783645');
+	Configure::write('Security.cipherSeed', '76566996657453542496749683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -270,6 +268,14 @@ Configure::write('debug', 1);
  * any date & time related errors.
  */
 	//date_default_timezone_set('UTC');
+
+/**
+ * `Config.timezone` is available in which you can set users' timezone string.
+ * If a method of CakeTime class is called with $timezone parameter as null and `Config.timezone` is set,
+ * then the value of `Config.timezone` will be used. This feature allows you to set users' timezone just
+ * once instead of passing it each time in function calls.
+ */
+	//Configure::write('Config.timezone', 'Europe/Paris')
 
 /**
  *
