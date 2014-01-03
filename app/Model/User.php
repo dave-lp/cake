@@ -1,16 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
 App::uses('AuthComponent', 'Controller/Component');
-class User extends AppModel {
-    // other code.
 
-    public function beforeSave($options = array()) {
-        $this->data['User']['password'] = AuthComponent::password(
-          $this->data['User']['password']
-        );
-        return true;
-    }
-}
 /**
  * User Model
  *
@@ -18,6 +9,12 @@ class User extends AppModel {
  * @property Post $Post
  */
 class User extends AppModel {
+    public function beforeSave($options = array()) {
+        $this->data['User']['password'] = AuthComponent::password(
+          $this->data['User']['password']
+        );
+        return true;
+    }
 
 /**
  * Validation rules
