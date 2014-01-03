@@ -2,8 +2,6 @@
 /**
  * FormHelperTest file
  *
- * PHP 5
- *
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -2350,6 +2348,43 @@ class FormHelperTest extends CakeTestCase {
 	}
 
 /**
+ * Test time with selected values around 12:xx:xx
+ *
+ * @return void
+ */
+	public function testTimeSelectedWithIntervalTwelve() {
+		$result = $this->Form->input('Model.start_time', array(
+			'type' => 'time',
+			'timeFormat' => 12,
+			'interval' => 15,
+			'selected' => '00:00:00'
+		));
+		$this->assertContains('<option value="12" selected="selected">12</option>', $result);
+		$this->assertContains('<option value="00" selected="selected">00</option>', $result);
+		$this->assertContains('<option value="am" selected="selected">am</option>', $result);
+
+		$result = $this->Form->input('Model.start_time', array(
+			'type' => 'time',
+			'timeFormat' => 12,
+			'interval' => 15,
+			'selected' => '12:00:00'
+		));
+		$this->assertContains('<option value="12" selected="selected">12</option>', $result);
+		$this->assertContains('<option value="00" selected="selected">00</option>', $result);
+		$this->assertContains('<option value="pm" selected="selected">pm</option>', $result);
+
+		$result = $this->Form->input('Model.start_time', array(
+			'type' => 'time',
+			'timeFormat' => 12,
+			'interval' => 15,
+			'selected' => '12:15:00'
+		));
+		$this->assertContains('<option value="12" selected="selected">12</option>', $result);
+		$this->assertContains('<option value="15" selected="selected">15</option>', $result);
+		$this->assertContains('<option value="pm" selected="selected">pm</option>', $result);
+	}
+
+/**
  * Test interval & timeFormat = 12
  *
  * @return void
@@ -2848,6 +2883,34 @@ class FormHelperTest extends CakeTestCase {
 			array('option' => array('value' => 'value')), 'good', '/option',
 			array('option' => array('value' => 'other')), 'bad', '/option',
 			'/select',
+			'/div'
+		);
+		$this->assertTags($result, $expected);
+	}
+
+/**
+ * Test that inferred types do not override developer input
+ *
+ * @return void
+ */
+	public function testInputMagicTypeDoesNotOverride() {
+		$this->View->viewVars['users'] = array('value' => 'good', 'other' => 'bad');
+		$result = $this->Form->input('Model.user', array('type' => 'checkbox'));
+		$expected = array(
+			'div' => array('class' => 'input checkbox'),
+			array('input' => array(
+				'type' => 'hidden',
+				'name' => 'data[Model][user]',
+				'id' => 'ModelUser_',
+				'value' => 0,
+			)),
+			array('input' => array(
+				'name' => 'data[Model][user]',
+				'type' => 'checkbox',
+				'id' => 'ModelUser',
+				'value' => 1
+			)),
+			'label' => array('for' => 'ModelUser'), 'User', '/label',
 			'/div'
 		);
 		$this->assertTags($result, $expected);
@@ -7168,6 +7231,35 @@ class FormHelperTest extends CakeTestCase {
 			'input' => array('type' => 'hidden', 'name' => '_method', 'value' => 'POST'),
 			'/form',
 			'a' => array('class' => 'btn btn-danger', 'href' => '#', 'onclick' => 'preg:/if \(confirm\(\&quot\;Confirm thing\&quot\;\)\) \{ document\.post_\w+\.submit\(\); \} event\.returnValue = false; return false;/'),
+			'/a'
+		));
+	}
+
+/**
+ * test creating postLinks after a GET form.
+ *
+ * @return void
+ */
+	public function testPostLinkAfterGetForm() {
+		$this->Form->request->params['_Token']['key'] = 'testkey';
+		$this->Form->create('User', array('type' => 'get'));
+		$this->Form->end();
+
+		$result = $this->Form->postLink('Delete', '/posts/delete/1');
+		$this->assertTags($result, array(
+			'form' => array(
+				'method' => 'post', 'action' => '/posts/delete/1',
+				'name' => 'preg:/post_\w+/', 'id' => 'preg:/post_\w+/', 'style' => 'display:none;'
+			),
+			array('input' => array('type' => 'hidden', 'name' => '_method', 'value' => 'POST')),
+			array('input' => array('type' => 'hidden', 'name' => 'data[_Token][key]', 'value' => 'testkey', 'id' => 'preg:/Token\d+/')),
+			'div' => array('style' => 'display:none;'),
+			array('input' => array('type' => 'hidden', 'name' => 'data[_Token][fields]', 'value' => 'preg:/[\w\d%]+/', 'id' => 'preg:/TokenFields\d+/')),
+			array('input' => array('type' => 'hidden', 'name' => 'data[_Token][unlocked]', 'value' => '', 'id' => 'preg:/TokenUnlocked\d+/')),
+			'/div',
+			'/form',
+			'a' => array('href' => '#', 'onclick' => 'preg:/document\.post_\w+\.submit\(\); event\.returnValue = false; return false;/'),
+			'Delete',
 			'/a'
 		));
 	}
