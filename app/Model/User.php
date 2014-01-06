@@ -16,8 +16,6 @@ class User extends AppModel {
         return true;
     }
 
-    public $belongsTo = array('Group');
-    public $actsAs = array('Acl' => array('type' => 'requester'));
 
     public function parentNode() {
         if (!$this->id && empty($this->data)) {
@@ -111,4 +109,8 @@ class User extends AppModel {
 		)
 	);
 
+    public $actsAs = array('Acl' => array('type' => 'requester'));
+	public function bindNode($user) {
+		return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+	}
 }

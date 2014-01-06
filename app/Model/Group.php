@@ -27,12 +27,6 @@ class Group extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-    public $actsAs = array('Acl' => array('type' => 'requester'));
-
-    public function parentNode() {
-        return null;
-    }
-
 /**
  * hasMany associations
  *
@@ -53,5 +47,10 @@ class Group extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+    public $actsAs = array('Acl' => array('type' => 'requester'));
+
+    public function parentNode() {
+        return null;
+    }
 
 }
