@@ -21,7 +21,7 @@ public function beforeFilter() {
 	$this->Auth->allow('logout'); 
 }
 
-
+/*
 public function initDB() {
     $group = $this->User->Group;
     //Allow admins to everything
@@ -46,7 +46,7 @@ public function initDB() {
     exit;
 }
 
-
+*/
 public function login() {
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
@@ -60,14 +60,6 @@ public function login() {
     }
 
 }
-/*
-public function login() {
-    if ($this->Session->read('Auth.User')) {
-        $this->Session->setFlash('You are logged in!');
-        return $this->redirect('/');
-    }
-}
-*/
 public function logout() {
 	$this->Session->setFlash('Good-Bye');
 	$this->redirect($this->Auth->logout());
